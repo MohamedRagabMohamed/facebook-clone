@@ -16,12 +16,15 @@
   display: flex;
   align-items: center;
   background-color: #eff2f2;
-  padding: 10px;
+  padding: 0 5px 0 10px;
   margin-left: 10px;
   border-radius: 999px;
 }
 .header__left > img {
   height: 40px;
+}
+.header__input > .MuiSvgIcon-root {
+  color: #979292;
 }
 .header__input > input {
   border: none;
