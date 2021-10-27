@@ -1,14 +1,16 @@
 import React from "react";
 import Story from "./Story";
 import "./StoryReel.css";
+import { useStateValue } from "./StateProvider";
 
 function StoryReel() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="storyReel">
       <Story
-        title="mohamed ragab"
+        title={user.displayName}
         image="https://i.pinimg.com/originals/65/1e/8e/651e8e8b7461f6761aba78f3b4ed8986.jpg"
-        profileSrc="https://i.pinimg.com/originals/a4/0b/e2/a40be2989ed07401f31d9af9db13b800.jpg"
+        profileSrc={user.photoURL}
       />
       <Story
         title="Olivia  Oscar"

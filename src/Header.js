@@ -13,8 +13,10 @@ import {
   Forum,
   NotificationsActive,
 } from "@material-ui/icons";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="header">
       <div className="header__left">
@@ -24,7 +26,7 @@ function Header() {
         />
         <div className="header__input">
           <SearchIcon />
-          <input type="text" placeholder=" search facebook" />
+          <input type="text" placeholder=" facebook search" />
         </div>
       </div>
       <div className="header__center">
@@ -49,8 +51,8 @@ function Header() {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
-          <h4>mohamed ragab</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
         <IconButton>
           <Add />
